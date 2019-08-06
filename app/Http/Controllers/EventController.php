@@ -56,8 +56,9 @@ class EventController extends Controller {
         $event->additional_info = request('additional_info');
 
         if($event->save()) {
-            return redirect('event/list');
+            return back()->with('message', 'Successfully saved Event.');
         }
+        return back()->withErrors(['error' => 'Failed to save Event']);
 
     }
 

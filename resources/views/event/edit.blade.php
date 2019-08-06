@@ -11,7 +11,7 @@
                     </div>
 
                     <div class="card-body">
-                        @if(count($errors))
+                        @if (count($errors))
                             <div class="form-group">
                                 <div class="alert alert-danger">
                                     <ul>
@@ -20,6 +20,12 @@
                                         @endforeach
                                     </ul>
                                 </div>
+                            </div>
+                        @endif
+
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
                             </div>
                         @endif
 
